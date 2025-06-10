@@ -1,4 +1,4 @@
-import logging
+from src.logger import logging
 import sys
 
 # 配置日志（这是一个好习惯，可以将日志输出到文件或控制台）
