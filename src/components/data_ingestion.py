@@ -7,6 +7,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from src.components.model_trainer import ModelTrainer
+from src.utils import *
 from src.components.model_trainer import ModelTrainerConfig
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
@@ -34,7 +35,8 @@ class DataIngestion:
         logging.info("开始进行数据摄取")
         try:
             # 读取数据集
-            df = pd.read_csv("/Users/apple/PycharmProjects/PythonProject2/notebook/data/stud.csv")  # 替换为实际的数据源路径
+            # 将所有的 \ 替换为 /
+            df = pd.read_csv("C:/Users/Administrator/PycharmProjects/First-ML-Project/notebook/data/stud.csv")  # 替换为实际的数据源路径
             logging.info("Read the data as DataFrame")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)

@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d38f6701-6955-4ecd-a333-a506efabd114" name="更改" comment="添加数据转换功能，支持数据预处理和特征工程">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/PythonProject2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonProject2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/artifacts/model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/artifacts/model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/artifacts/preprocessor.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/artifacts/preprocessor.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/data_ingestion.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data_ingestion.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/model_trainer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
     </list>
@@ -20,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -35,7 +41,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/zimingttkx/First-ML-Project.git",
-    "accountId": "36556490-e638-445d-a3cd-1ac123d5424c"
+    "accountId": "3c6d5db3-632f-44e6-9c7e-e71a62f888df"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -48,7 +54,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.app.executor": "Run",
     "Python.data_ingestion.executor": "Run",
     "Python.exception.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -116,6 +124,7 @@
       <workItem from="1749561000456" duration="1343000" />
       <workItem from="1749609774548" duration="560000" />
       <workItem from="1749610352528" duration="18127000" />
+      <workItem from="1749648825100" duration="2457000" />
     </task>
     <task id="LOCAL-00001" summary="进行了模型训练 使用metrics评估模型">
       <option name="closed" value="true" />
@@ -154,9 +163,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="添加数据转换功能，支持数据预处理和特征工程" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PythonProject2$data_ingestion.coverage" NAME="data_ingestion 覆盖结果" MODIFIED="1749640818952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/components" />
-    <SUITE FILE_PATH="coverage/PythonProject2$logger.coverage" NAME="logger 覆盖结果" MODIFIED="1749555174044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/PythonProject2$exception.coverage" NAME="exception 覆盖结果" MODIFIED="1749555183945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/PythonProject2$logger.coverage" NAME="logger 覆盖结果" MODIFIED="1749555174044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/First_ML_Project$data_ingestion.coverage" NAME="data_ingestion 覆盖结果" MODIFIED="1749648889296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/components" />
+    <SUITE FILE_PATH="coverage/First_ML_Project$app.coverage" NAME="app 覆盖结果" MODIFIED="1749650907959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject2$data_ingestion.coverage" NAME="data_ingestion 覆盖结果" MODIFIED="1749640818952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/components" />
     <SUITE FILE_PATH="coverage/First_ML_Project$exception.coverage" NAME="exception 覆盖结果" MODIFIED="1749564496856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

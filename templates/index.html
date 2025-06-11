@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梓铭天天开心 - 主页</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Google Fonts字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 使用Inter字体作为默认字体 */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+        <!-- 主内容容器 -->
+        <div class="w-full max-w-2xl text-center bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                欢迎使用学生表现预测器
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                这是一个基于Machine Learning Model的Web应用，旨在根据学生的各项背景信息预测其学业表现。
+            </p>
+            <!-- 动作按钮 -->
+            <a href="/predictdata"
+               class="inline-block bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 transition-transform transform hover:scale-105 duration-300 ease-in-out">
+                开始预测
+            </a>
+        </div>
+        <!-- 页脚 -->
+        <footer class="mt-12 text-center text-gray-500 dark:text-gray-400">
+            <p>&copy; 2025 机器学习项目. 梓铭保留所有权利.</p>
+        </footer>
+    </div>
+</body>
+</html>
