@@ -4,5 +4,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Fitst-ML-Project" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Complete-Data-Science-With-Machine-Learning-And-NLP-2024-main" />
   </component>
 </module>
