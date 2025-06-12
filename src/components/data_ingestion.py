@@ -36,7 +36,8 @@ class DataIngestion:
         try:
             # 读取数据集
             # 将所有的 \ 替换为 /
-            df = pd.read_csv("C:/Users/Administrator/PycharmProjects/First-ML-Project/notebook/data/stud.csv")  # 替换为实际的数据源路径
+
+            df = pd.read_csv("/Users/apple/PycharmProjects/PythonProject2/notebook/data/stud.csv")  # 替换为实际的数据源路径
             logging.info("Read the data as DataFrame")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)

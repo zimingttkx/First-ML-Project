@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数据预测 - 学生表现预测器</title>
-    <!-- 引入Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入Google Fonts字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
@@ -24,7 +22,6 @@
 </head>
 <body class="bg-gray-100 dark:bg-gray-900">
 
-    <!-- 导航栏 -->
     <nav class="bg-white dark:bg-gray-800 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -35,19 +32,16 @@
         </div>
     </nav>
 
-    <!-- 主内容区域 -->
     <div class="container mx-auto px-4 py-8">
         <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg max-w-3xl mx-auto">
             <h1 class="text-2xl font-bold text-center text-gray-900 dark:text-white mb-6">
                 输入学生信息以进行预测
             </h1>
 
-            <!-- 预测表单 -->
             <form action="/predictdata" method="post">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- 性别 -->
                     <div>
-                        <label for="gender" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">性别</label>
+                        <label for="gender" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">性别 (Gender)</label>
                         <select id="gender" name="gender" required class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
                             <option selected disabled value="">请选择...</option>
                             <option value="male">男</option>
@@ -55,10 +49,9 @@
                         </select>
                     </div>
 
-                    <!-- 种族/族裔 -->
                     <div>
-                        <label for="ethnicity" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">种族/族裔</label>
-                        <select id="ethnicity" name="race/ethnicity" required class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
+                        <label for="race_ethnicity" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">种族/族裔 (Race/Ethnicity)</label>
+                        <select id="race_ethnicity" name="race_ethnicity" required class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
                             <option selected disabled value="">请选择...</option>
                             <option value="group A">A组</option>
                             <option value="group B">B组</option>
@@ -68,9 +61,8 @@
                         </select>
                     </div>
 
-                    <!-- 父母教育水平 -->
                     <div>
-                        <label for="parental_level_of_education" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">父母教育水平</label>
+                        <label for="parental_level_of_education" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">父母教育水平 (Parental Level of Education)</label>
                         <select id="parental_level_of_education" name="parental_level_of_education" required class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
                             <option selected disabled value="">请选择...</option>
                             <option value="associate's degree">副学士学位</option>
@@ -82,9 +74,8 @@
                         </select>
                     </div>
 
-                    <!-- 午餐类型 -->
                     <div>
-                        <label for="lunch" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">午餐类型</label>
+                        <label for="lunch" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">午餐类型 (Lunch)</label>
                         <select id="lunch" name="lunch" required class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
                             <option selected disabled value="">请选择...</option>
                             <option value="standard">标准</option>
@@ -92,9 +83,8 @@
                         </select>
                     </div>
 
-                    <!-- 备考课程 -->
                     <div>
-                        <label for="test_preparation_course" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">备考课程</label>
+                        <label for="test_preparation_course" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">备考课程 (Test Preparation Course)</label>
                         <select id="test_preparation_course" name="test_preparation_course" required class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
                             <option selected disabled value="">请选择...</option>
                             <option value="none">无</option>
@@ -102,20 +92,17 @@
                         </select>
                     </div>
 
-                    <!-- 阅读分数 -->
                     <div>
-                        <label for="reading_score" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">阅读分数</label>
+                        <label for="reading_score" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">阅读分数 (Reading Score)</label>
                         <input type="number" id="reading_score" name="reading_score" placeholder="例如: 75" required min="0" max="100" class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
                     </div>
 
-                    <!-- 写作分数 -->
                     <div>
-                        <label for="writing_score" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">写作分数</label>
+                        <label for="writing_score" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">写作分数 (Writing Score)</label>
                         <input type="number" id="writing_score" name="writing_score" placeholder="例如: 80" required min="0" max="100" class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
                     </div>
                 </div>
 
-                <!-- 提交按钮 -->
                 <div class="mt-8 text-center">
                     <button type="submit" class="w-full md:w-auto bg-blue-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 transition duration-300">
                         提交预测
@@ -123,12 +110,10 @@
                 </div>
             </form>
 
-            <!-- 结果显示区域 -->
             <div class="mt-8 text-center">
                 <h2 class="text-xl font-bold text-gray-900 dark:text-white">
-                    预测的数学分数为:
+                    预测的数学分数为 (Predicted Math Score):
                     <span class="text-2xl text-blue-600 dark:text-blue-400 ml-2">
-                        <!-- Flask后端会将结果渲染到这里 -->
                         {{ results }}
                     </span>
                 </h2>
