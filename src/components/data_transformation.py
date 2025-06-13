@@ -13,9 +13,9 @@ from src.logger import logging
 
 @dataclass
 class DataTransformationConfig:
-    preprocessed_object_file_path: str = os.path.join("artifacts", "preprocessor.pkl")
-    transformed_train_data_path: str = os.path.join("artifacts", "transformed_train.csv")
-    transformed_test_data_path: str = os.path.join("artifacts", "transformed_test.csv")
+    preprocessed_object_file_path: str = os.path.join("../../artifacts", "preprocessor.pkl")
+    transformed_train_data_path: str = os.path.join("../../artifacts", "transformed_train.csv")
+    transformed_test_data_path: str = os.path.join("../../artifacts", "transformed_test.csv")
 
 class DataTransformation:
     def __init__(self):

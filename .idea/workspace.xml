@@ -5,17 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d38f6701-6955-4ecd-a333-a506efabd114" name="更改" comment="添加超参数调整功能，支持多种模型的参数优化">
-      <change beforePath="$PROJECT_DIR$/.idea/PythonProject2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonProject2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/artifacts/preprocessor.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/artifacts/preprocessor.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/artifacts/model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/artifacts/model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/artifacts/preprocessor.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/artifacts/preprocessor.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/artifacts/raw.csv" beforeDir="false" afterPath="$PROJECT_DIR$/artifacts/raw.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/artifacts/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/artifacts/test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/artifacts/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/artifacts/train.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/catboost_info/catboost_training.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/catboost_info/catboost_training.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/catboost_info/learn/events.out.tfevents" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/catboost_info/learn/events.out.tfevents" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/catboost_info/learn_error.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/catboost_info/learn_error.tsv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/catboost_info/time_left.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/catboost_info/time_left.tsv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/catboost_info/tmp/cat_feature_index.199c0e1-d6b76920-28348123-5d9dfc52.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/catboost_info/tmp/cat_feature_index.90ce79cb-6b93b25f-565f094a-2a2543cd.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/catboost_info/tmp/cat_feature_index.9f64eda6-2b4c7986-2b522f93-ea931fa3.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/catboost_info/tmp/cat_feature_index.d2408a34-203e350a-d75625fa-3d8c3c52.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/catboost_info/tmp/cat_feature_index.d403f28b-768475e1-8556d3e7-92af9289.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/catboost_info/tmp/cat_feature_index.d5723aa6-cef1665d-956e43a3-8dc9b327.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/catboost_info/tmp/cat_feature_index.dc0add52-c3b0687d-947dd2ea-36f3f81f.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/catboost_info/tmp/cat_feature_index.f1e7e4fa-6923b85b-f1d45bbf-9871130e.tmp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/data_ingestion.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data_ingestion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pipeline/predict_pipeine.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pipeline/predict_pipeine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/data_transformation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data_transformation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/model_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +37,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -53,29 +76,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_ingestion.executor&quot;: &quot;Run&quot;,
-    &quot;Python.exception.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.app.executor": "Run",
+    "Python.data_ingestion.executor": "Run",
+    "Python.exception.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: []
+  "keyToStringList": {
+    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": []
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="data_ingestion" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject2" />
@@ -128,7 +156,9 @@
       <workItem from="1749648825100" duration="2457000" />
       <workItem from="1749689846138" duration="170000" />
       <workItem from="1749690131147" duration="421000" />
-      <workItem from="1749690579348" duration="1250000" />
+      <workItem from="1749690579348" duration="1934000" />
+      <workItem from="1749692558973" duration="333000" />
+      <workItem from="1749703600455" duration="9520000" />
     </task>
     <task id="LOCAL-00001" summary="进行了模型训练 使用metrics评估模型">
       <option name="closed" value="true" />
@@ -172,6 +202,7 @@
     <SUITE FILE_PATH="coverage/First_ML_Project$data_ingestion.coverage" NAME="data_ingestion 覆盖结果" MODIFIED="1749648889296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/components" />
     <SUITE FILE_PATH="coverage/PythonProject2$exception.coverage" NAME="exception 覆盖结果" MODIFIED="1749555183945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/First_ML_Project$app.coverage" NAME="app 覆盖结果" MODIFIED="1749650907959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject2$app.coverage" NAME="app 覆盖结果" MODIFIED="1749723227632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/First_ML_Project$exception.coverage" NAME="exception 覆盖结果" MODIFIED="1749564496856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

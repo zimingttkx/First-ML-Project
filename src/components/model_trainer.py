@@ -27,7 +27,7 @@ class ModelTrainerConfig:
     模型训练配置类 (Model Training Configuration Class)
     定义了训练后模型的保存路径。
     """
-    trained_model_file_path: str = os.path.join("artifacts", "model.pkl")
+    trained_model_file_path: str = os.path.join("../../artifacts", "model.pkl")
 
 
 class ModelTrainer:

@@ -3,122 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数据预测 - 学生表现预测器</title>
+    <title>Based-ML-Regression Designed By 梓铭</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Removed Google Fonts to rely on a robust system font stack, per your successful code's logic -->
     <style>
+        /* A robust, system-first font stack inspired by your working code. */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        /* 自定义焦点样式 */
-        .form-input:focus {
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(209, 213, 219, 0.5);
+        }
+        .macos-background {
+            background-color: #f0f2f5;
+            background-image: radial-gradient(circle at 1% 1%, hsla(212, 47%, 85%, 0.5) 0px, transparent 50%),
+                              radial-gradient(circle at 99% 99%, hsla(343, 47%, 85%, 0.5) 0px, transparent 50%);
+        }
+        .form-input:focus, .form-select:focus {
             outline: none;
-            border-color: #3b82f6; /* blue-500 */
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+            border-color: #3b82f6;
         }
+        /* Loading spinner animation */
+        .loader {
+            border: 4px solid #f3f3f3; border-radius: 50%; border-top: 4px solid #3498db; width: 40px; height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900">
+<body class="macos-background">
 
-    <nav class="bg-white dark:bg-gray-800 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <a href="/" class="text-xl font-bold text-gray-900 dark:text-white">学生表现预测器</a>
+    <div class="flex flex-col min-h-screen">
+        <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+             <div class="flex items-center space-x-3">
+                 <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 3.75-3.75V9.75A3.75 3.75 0 0 0 18 6h-4.5m-4.5 0H5.625c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125H9m7.5-3.375h.375a.375.375 0 0 1 .375.375v1.5a.375.375 0 0 1-.375.375h-.375m-7.5 0h.375a.375.375 0 0 0 .375-.375v-1.5a.375.375 0 0 0-.375-.375h-.375M9 15l-3 3m0 0 3-3m-3 3v-3m6 3h.008v.008H12v-.008ZM15 15h.008v.008H15v-.008Zm3 0h.008v.008H18v-.008Zm-6-4.5h.008v.008H12v-.008Zm3 0h.008v.008H15v-.008Zm3 0h.008v.008H18v-.008Z" />
+                </svg>
+                <h1 class="text-xl font-bold text-gray-800">Based-ML-Regression</h1>
+            </div>
+        </header>
+
+        <main class="flex-grow container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+                <div class="glass-card rounded-2xl shadow-xl p-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">学生表现预测器</h2>
+                    <p class="text-gray-600 mb-8">梓铭祝你平安喜乐, 请提供以下信息预测学生成绩。</p>
+
+                    <form id="prediction-form" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                            <!-- Using Native Selects for maximum compatibility -->
+                            <div>
+                                <label for="gender" class="block text-sm font-medium text-gray-700 mb-1">性别 (Gender)</label>
+                                <select id="gender" name="gender" required class="form-select w-full p-3 bg-white/80 border border-gray-300 text-gray-900 rounded-lg transition">
+                                    <option value="male">男 (male)</option>
+                                    <option value="female">女 (female)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="race_ethnicity" class="block text-sm font-medium text-gray-700 mb-1">种族/族裔 (Race)</label>
+                                <select id="race_ethnicity" name="race_ethnicity" required class="form-select w-full p-3 bg-white/80 border border-gray-300 text-gray-900 rounded-lg transition">
+                                    <option value="group A">A组</option>
+                                    <option value="group B">B组</option>
+                                    <option value="group C">C组</option>
+                                    <option value="group D">D组</option>
+                                    <option value="group E">E组</option>
+                                </select>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="parental_level_of_education" class="block text-sm font-medium text-gray-700 mb-1">父母教育水平</label>
+                                <select id="parental_level_of_education" name="parental_level_of_education" required class="form-select w-full p-3 bg-white/80 border border-gray-300 text-gray-900 rounded-lg transition">
+                                    <option value="associate's degree">副学士学位</option>
+                                    <option value="bachelor's degree">学士学位</option>
+                                    <option value="high school">高中</option>
+                                    <option value="master's degree">硕士学位</option>
+                                    <option value="some college">大学在读</option>
+                                    <option value="some high school">高中在读</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="lunch" class="block text-sm font-medium text-gray-700 mb-1">午餐类型 (Lunch)</label>
+                                <select id="lunch" name="lunch" required class="form-select w-full p-3 bg-white/80 border border-gray-300 text-gray-900 rounded-lg transition">
+                                    <option value="standard">标准 (standard)</option>
+                                    <option value="free/reduced">免费/减免 (free/reduced)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="test_preparation_course" class="block text-sm font-medium text-gray-700 mb-1">备考课程 (Test Prep)</label>
+                                <select id="test_preparation_course" name="test_preparation_course" required class="form-select w-full p-3 bg-white/80 border border-gray-300 text-gray-900 rounded-lg transition">
+                                    <option value="none">无 (none)</option>
+                                    <option value="completed">已完成 (completed)</option>
+                                </select>
+                            </div>
+
+                            <div class="sm:col-span-2 grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="reading_score" class="block text-sm font-medium text-gray-700 mb-1">阅读分数</label>
+                                    <input type="number" id="reading_score" name="reading_score" placeholder="0-100" required min="0" max="100" class="form-input w-full p-3 bg-white/80 border border-gray-300 text-gray-900 rounded-lg transition">
+                                </div>
+                                <div>
+                                     <label for="writing_score" class="block text-sm font-medium text-gray-700 mb-1">写作分数</label>
+                                     <input type="number" id="writing_score" name="writing_score" placeholder="0-100" required min="0" max="100" class="form-input w-full p-3 bg-white/80 border border-gray-300 text-gray-900 rounded-lg transition">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-4"><button type="submit" id="submit-button" class="w-full bg-blue-600 text-white font-bold px-8 py-3.5 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/50 flex items-center justify-center">提交并预测</button></div>
+                    </form>
+                </div>
+
+                <div class="flex items-center justify-center">
+                    <div id="result-card" class="text-center w-full glass-card rounded-2xl shadow-xl p-8 h-full flex flex-col justify-center">
+                       <h2 class="text-2xl font-bold text-gray-900 mb-4">预测结果</h2>
+                        <p class="text-gray-600 mb-8">基于您提供的数据，我们预测学生的数学成绩为：</p>
+                        <div class="bg-blue-100/60 rounded-xl p-6 min-h-[116px] flex items-center justify-center">
+                            <div id="loader" class="loader hidden"></div>
+                            <p id="result-text" class="text-6xl font-bold text-blue-600"><span id="prediction-result">-</span></p>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-8">请注意：此预测结果基于回归模型，仅供参考。</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </main>
 
-    <div class="container mx-auto px-4 py-8">
-        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg max-w-3xl mx-auto">
-            <h1 class="text-2xl font-bold text-center text-gray-900 dark:text-white mb-6">
-                输入学生信息以进行预测
-            </h1>
-
-            <form action="/predictdata" method="post">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="gender" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">性别 (Gender)</label>
-                        <select id="gender" name="gender" required class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
-                            <option selected disabled value="">请选择...</option>
-                            <option value="male">男</option>
-                            <option value="female">女</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="race_ethnicity" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">种族/族裔 (Race/Ethnicity)</label>
-                        <select id="race_ethnicity" name="race_ethnicity" required class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
-                            <option selected disabled value="">请选择...</option>
-                            <option value="group A">A组</option>
-                            <option value="group B">B组</option>
-                            <option value="group C">C组</option>
-                            <option value="group D">D组</option>
-                            <option value="group E">E组</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="parental_level_of_education" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">父母教育水平 (Parental Level of Education)</label>
-                        <select id="parental_level_of_education" name="parental_level_of_education" required class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
-                            <option selected disabled value="">请选择...</option>
-                            <option value="associate's degree">副学士学位</option>
-                            <option value="bachelor's degree">学士学位</option>
-                            <option value="high school">高中</option>
-                            <option value="master's degree">硕士学位</option>
-                            <option value="some college">大学在读</option>
-                            <option value="some high school">高中在读</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="lunch" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">午餐类型 (Lunch)</label>
-                        <select id="lunch" name="lunch" required class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
-                            <option selected disabled value="">请选择...</option>
-                            <option value="standard">标准</option>
-                            <option value="free/reduced">免费/减免</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="test_preparation_course" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">备考课程 (Test Preparation Course)</label>
-                        <select id="test_preparation_course" name="test_preparation_course" required class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
-                            <option selected disabled value="">请选择...</option>
-                            <option value="none">无</option>
-                            <option value="completed">已完成</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="reading_score" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">阅读分数 (Reading Score)</label>
-                        <input type="number" id="reading_score" name="reading_score" placeholder="例如: 75" required min="0" max="100" class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
-                    </div>
-
-                    <div>
-                        <label for="writing_score" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">写作分数 (Writing Score)</label>
-                        <input type="number" id="writing_score" name="writing_score" placeholder="例如: 80" required min="0" max="100" class="form-input w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg transition">
-                    </div>
-                </div>
-
-                <div class="mt-8 text-center">
-                    <button type="submit" class="w-full md:w-auto bg-blue-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 transition duration-300">
-                        提交预测
-                    </button>
-                </div>
-            </form>
-
-            <div class="mt-8 text-center">
-                <h2 class="text-xl font-bold text-gray-900 dark:text-white">
-                    预测的数学分数为 (Predicted Math Score):
-                    <span class="text-2xl text-blue-600 dark:text-blue-400 ml-2">
-                        {{ results }}
-                    </span>
-                </h2>
-            </div>
-        </div>
+        <footer class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-500">
+            <p>&copy; 2025 Based-ML-Regression. Designed By 梓铭.</p>
+        </footer>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('prediction-form');
+            const submitButton = document.getElementById('submit-button');
+            const loader = document.getElementById('loader');
+            const resultText = document.getElementById('result-text');
+            const predictionResultSpan = document.getElementById('prediction-result');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Stop the default page reload
+
+                // --- UI updates for loading state ---
+                resultText.classList.add('hidden');
+                loader.classList.remove('hidden');
+                submitButton.disabled = true;
+                submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+
+                // --- Collect Form Data ---
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+                console.log('Submitting data:', data);
+
+                // --- Mock API Call ---
+                // In a real application, you would replace this with a fetch() call to your Python backend.
+                // e.g., fetch('/predictdata', { method: 'POST', body: JSON.stringify(data), headers: {'Content-Type': 'application/json'} })
+                mockApiCall(data)
+                    .then(response => {
+                        predictionResultSpan.textContent = response.prediction;
+                    })
+                    .catch(error => {
+                        console.error('Prediction failed:', error);
+                        predictionResultSpan.textContent = '错误';
+                    })
+                    .finally(() => {
+                        // --- Revert UI from loading state ---
+                        loader.classList.add('hidden');
+                        resultText.classList.remove('hidden');
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                    });
+            });
+
+            function mockApiCall(data) {
+                console.log('Sending data to mock API:', data);
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        const randomScore = (Math.random() * 50 + 50).toFixed(1);
+                        console.log('Mock API returned score:', randomScore);
+                        resolve({ prediction: randomScore });
+                    }, 1500); // Simulate 1.5 second network delay
+                });
+            }
+        });
+    </script>
 </body>
 </html>
